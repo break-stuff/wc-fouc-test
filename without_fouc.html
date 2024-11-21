@@ -22,7 +22,7 @@
 
       body.wc-loaded {
         opacity: 1;
-        transition: opacity 100ms;
+        transition: opacity 200ms;
       }
     </style>
 
@@ -33,7 +33,7 @@
             customElements.whenDefined(tag)
           )
         ).then(() => {
-          setTimeout(() => document.body.classList.add("wc-loaded"));
+          setTimeout(() => document.body.classList.add("wc-loaded"), 200);
         });
       })();
     </script>
