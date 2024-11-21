@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>With FOUC</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace-autoloader.js"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">With FOUC</a>
+      <a href="/without_fouc.html">Without FOUC</a>
+    </nav>
+    <main>
+      <h1>Home page</h1>
+
+      <sl-alert variant="primary" open>
+        <sl-icon slot="icon" name="info-circle"></sl-icon>
+        <strong>This is super informative</strong><br />
+        You can tell by how pretty the alert is.
+      </sl-alert>
+
+      <sl-avatar label="User avatar"></sl-avatar>
+
+      <div>
+        <sl-badge variant="primary">Primary</sl-badge>
+        <sl-badge variant="success">Success</sl-badge>
+        <sl-badge variant="neutral">Neutral</sl-badge>
+        <sl-badge variant="warning">Warning</sl-badge>
+        <sl-badge variant="danger">Danger</sl-badge>
+      </div>
+
+      <sl-breadcrumb>
+        <sl-breadcrumb-item>Catalog</sl-breadcrumb-item>
+        <sl-breadcrumb-item>Clothing</sl-breadcrumb-item>
+        <sl-breadcrumb-item>Women's</sl-breadcrumb-item>
+        <sl-breadcrumb-item>Shirts &amp; Tops</sl-breadcrumb-item>
+      </sl-breadcrumb>
+
+      <sl-dropdown>
+        <sl-button slot="trigger" caret>Dropdown</sl-button>
+        <sl-menu>
+          <sl-menu-item>Dropdown Item 1</sl-menu-item>
+          <sl-menu-item>Dropdown Item 2</sl-menu-item>
+          <sl-menu-item>Dropdown Item 3</sl-menu-item>
+          <sl-divider></sl-divider>
+          <sl-menu-item type="checkbox" checked>Checkbox</sl-menu-item>
+          <sl-menu-item disabled>Disabled</sl-menu-item>
+          <sl-divider></sl-divider>
+          <sl-menu-item>
+            Prefix
+            <sl-icon slot="prefix" name="gift"></sl-icon>
+          </sl-menu-item>
+          <sl-menu-item>
+            Suffix Icon
+            <sl-icon slot="suffix" name="heart"></sl-icon>
+          </sl-menu-item>
+        </sl-menu>
+      </sl-dropdown>
+
+      <sl-button-group label="Alignment">
+        <sl-button>Left</sl-button>
+        <sl-button>Center</sl-button>
+        <sl-button>Right</sl-button>
+      </sl-button-group>
+
+      <sl-checkbox>Checkbox</sl-checkbox>
+
+      <sl-details summary="Toggle Me">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </sl-details>
+
+      <sl-input
+        label="Nickname"
+        help-text="What would you like people to call you?"
+      ></sl-input>
+
+      <sl-tab-group>
+        <sl-tab slot="nav" panel="general">General</sl-tab>
+        <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+        <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+        <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+
+        <sl-tab-panel name="general"
+          >This is the general tab panel.</sl-tab-panel
+        >
+        <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+        <sl-tab-panel name="advanced"
+          >This is the advanced tab panel.</sl-tab-panel
+        >
+        <sl-tab-panel name="disabled"
+          >This is a disabled tab panel.</sl-tab-panel
+        >
+      </sl-tab-group>
+    </main>
+  </body>
+</html>
