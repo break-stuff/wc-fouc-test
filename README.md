@@ -7,23 +7,22 @@ The following lines of code are what are bing test:
 ```html
 <style>
   body {
-    opacity: 0.1;
+    opacity: 0;
   }
 
   body.wc-loaded {
     opacity: 1;
-    transition: opacity 100ms;
   }
 </style>
 
-<script type="module">
+<script>
   (() => {
     Promise.allSettled(
-      [...document.querySelectorAll(":not(:defined)")].map((tag) =>
-        customElements.whenDefined(tag)
+      [...document.querySelectorAll(":not(:defined)")].map((component) =>
+        customElements.whenDefined(component)
       )
     ).then(() => {
-      setTimeout(() => document.body.classList.add("wc-loaded"));
+      setTimeout(() => document.body.classList.add("wc-loaded"), 200);
     });
   })();
 </script>

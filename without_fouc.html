@@ -17,20 +17,19 @@
 
     <style>
       body {
-        opacity: 0.01;
+        opacity: 0;
       }
 
       body.wc-loaded {
         opacity: 1;
-        transition: opacity 200ms;
       }
     </style>
 
     <script>
       (() => {
         Promise.allSettled(
-          [...document.querySelectorAll(":not(:defined)")].map((tag) =>
-            customElements.whenDefined(tag)
+          [...document.querySelectorAll(":not(:defined)")].map((component) =>
+            customElements.whenDefined(component)
           )
         ).then(() => {
           setTimeout(() => document.body.classList.add("wc-loaded"), 200);
@@ -41,7 +40,9 @@
   <body>
     <nav>
       <a href="/wc-fouc-test/">With FOUC</a>
-      <a href="/wc-fouc-test/without_fouc.html" aria-current="page">Without FOUC</a>
+      <a href="/wc-fouc-test/without_fouc.html" aria-current="page">
+        Without FOUC
+      </a>
     </nav>
     <main>
       <h1>My other page</h1>
