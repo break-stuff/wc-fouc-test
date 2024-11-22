@@ -15,7 +15,7 @@ The following lines of code are what are bing test:
   (() => {
     Promise.allSettled(
       [...document.querySelectorAll(":not(:defined)")].map((component) =>
-        customElements.whenDefined(component)
+        customElements.whenDefined(component.localName)
       )
     ).then(() => {
       setTimeout(() => document.body.classList.add("wc-loaded"), 200);
