@@ -22,7 +22,7 @@ The following lines of code are what are bing test:
         customElements.whenDefined(component)
       )
     ).then(() => {
-      setTimeout(() => document.body.classList.add("wc-loaded"), 200);
+      setTimeout(() => document.body.classList.add("wc-loaded"), 10);
     });
   })();
 </script>
