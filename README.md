@@ -11,15 +11,13 @@ The following lines of code are what are bing test:
   }
 </style>
 
-<script>
+<script type="module">
   (() => {
     Promise.allSettled(
       [...document.querySelectorAll(":not(:defined)")].map((component) =>
-        customElements.whenDefined(component.localName)
+        customElements.whenDefined(component.tagName.toLowerCase())
       )
-    ).then(() => {
-      setTimeout(() => document.body.classList.add("wc-loaded"), 200);
-    });
+    ).then(() => document.body.classList.add("wc-loaded"));
   })();
 </script>
 ```
