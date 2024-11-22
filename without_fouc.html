@@ -16,12 +16,8 @@
     <link rel="stylesheet" href="styles.css" />
 
     <style>
-      body {
+      body:not(.wc-loaded) {
         opacity: 0;
-      }
-
-      body.wc-loaded {
-        opacity: 1;
       }
     </style>
 
@@ -32,7 +28,7 @@
             customElements.whenDefined(component)
           )
         ).then(() => {
-          setTimeout(() => document.body.classList.add("wc-loaded"), 10);
+          setTimeout(() => document.body.classList.add("wc-loaded"), 200);
         });
       })();
     </script>
